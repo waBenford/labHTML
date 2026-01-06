@@ -9,11 +9,11 @@
         .grid-container {
             display: grid;
 
-            /* แบ่งคอลัมน์ */
-            grid-template-columns: 20% 80%;
-
-            /* แบ่งแถว */
-            grid-template-rows: 70px 530px 70px;
+            grid-template:
+            "header header" 70px
+            "aside main" 530px
+            "footer footer" 70px
+            / 20% 80%;
 
             gap: 10px;
             padding: 10px;
@@ -23,8 +23,7 @@
         }
 
         header {
-            grid-row: 1/2; /* ครอบคลุม 2 คอลัมน์ */
-            grid-column: 1/3;
+            grid-area: header;
             background-color: #4CAF50;
             color: white;
             text-align: center;
@@ -33,8 +32,7 @@
         }
 
         aside {
-            grid-row: 2/3;
-            grid-column: 1/2;
+            grid-area: aside;
             background-color: rgb(33, 150, 243);
             color: white;
             text-align: center;
@@ -43,8 +41,7 @@
         }
 
         content {
-            grid-row: 2/3;
-            grid-column: 2/3;
+            grid-area: main;
             background-color: rgb(129, 0, 129);
             color: white;
             text-align: center;
@@ -53,8 +50,7 @@
         }
 
         footer {
-            grid-row: 3/4; /* ครอบคลุม 2 คอลัมน์ */
-            grid-column: 1/3;
+            grid-area: footer;
             background-color: #1b890c;
             color: white;
             text-align: center;
