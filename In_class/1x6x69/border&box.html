@@ -6,9 +6,18 @@
 .box {
   width: 200px;
   padding: 20px;
-  border: 5px solid #0077ff;
+  border: 3px solid #0077ff;
   margin: 20px;
   background-color: #cce5ff;
+}
+
+/* ตัวอย่างกรอบแบบ dashed และ dotted */
+.border2 {
+  width: 200px;
+  padding: 20px;
+  margin: 20px;
+  border: 3px dashed #ff7700;
+  border-style: dotted;
 }
 
 /* ตัวอย่างแบบปกติ (content-box) */
@@ -22,6 +31,19 @@
   background-color: #ffd8cc;
 }
 
+/* ตัวอย่าง box-shadow */
+.box-shadow-example {
+    box-shadow: 10px 10px 5px #888888;
+}
+
+/* ตัวอย่าง border-radius */
+.border-radius-20 {
+    border-radius: 20px;
+}
+
+.border-radius-50 {
+    border-radius: 50px;
+}
 
 </style>
 </head>
@@ -31,13 +53,13 @@
 <h2>CSS Box Model</h2>
 
 <h3>1) box-sizing: content-box (ค่าปกติ)</h3>
-<div class="box content-box">
+<div class="box content-box border-radius-20">
   ความกว้างที่กำหนด = 200px  
   (ไม่รวม padding + border)
 </div>
 
 <h3>2) box-sizing: border-box</h3>
-<div class="box border-box">
+<div class="border2 border-box box-shadow-example border-radius-50">
   ความกว้างที่กำหนด = 200px  
   (รวม padding + border อยู่ใน 200px)
 </div>
