@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab CSS2 - CSS Grid</title>
+    <style>
+        body {
+            font-family: 'Tahoma', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 25% 75%; /* ซ้าย 25% ขวา 75% */
+            min-height: 80vh;
+        }
+
+        .sidebar {
+            background-color: #3b91f7; /* สีเมนู */
+            color: white;
+            padding: 20px;
+        }
+
+        .content {
+            background-color: #eeeeee; /* สีเนื้อหา */
+            padding: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            padding: 10px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h2>โจทย์ที่ 2: 2-Column Layout ด้วย CSS Grid</h2>
+
+    <div class="container">
+        <div class="sidebar">
+            <h3>เมนู</h3>
+            <ul>
+                <li>About</li>
+                <li>Services</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h3>ยินดีต้อนรับ</h3>
+            <p>นี่คือเนื้อหาหลักของเว็บไซต์</p>
+            <p>ลองทดสอบย่อ-ขยายหน้าจอเพื่อดู Responsive Layout</p>
+        </div>
+    </div>
+
+</body>
+</html>
