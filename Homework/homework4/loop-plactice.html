@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop-Placetice</title>
+</head>
+<body>
+    <button onclick="loop()">Run code</button>
+    <div id="output"></div>
+
+    <script>
+        function loop() {
+            let maxNumber = 20;
+            let numberType = "";
+            let resultText = "";
+            let doubleNumber = "";
+            let returnNumber = "";
+
+            for( let i = 0; i < 21; i++ ) {
+                if( i % 2 == 0 ) {
+                    numberType = "คู่";
+                }else {
+                    numberType = "คี่";
+                }
+                console.log( i + " (" + numberType + ")" );
+
+                resultText += `<p>${i} (${numberType})</p>`;
+            }
+
+            for( let i = 0; i < 21; i += 2 ) {
+                console.log( "นับทีละ 2: " + i );
+
+                doubleNumber += `<p>นับทีละ 2: ${i}</p>`;
+            }
+
+            for( let i = 20; i >= 0; i-- ) {
+                console.log( "นับถอยหลัง: " + i );
+
+                returnNumber += `<p>นับถอยหลัง: ${i}</p>`;
+            }
+
+            document.getElementById( "output" ).innerHTML = `
+                ${resultText}
+                ${doubleNumber}
+                ${returnNumber}
+            `;
+        }
+    </script>
+</body>
+</html>
