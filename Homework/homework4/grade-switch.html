@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch-Grade</title>
+</head>
+<body>
+    <button onclick="checkGrade()">Run code</button>
+    <div id="output"></div>
+
+    <script>
+        function checkGrade() {
+            //Math.random() สุ่มเลขทศนิยม 0-1 จะไม่ถึง1และไม่ติดลบ เช่น 0.543
+            //Math.floor ปัดเศษ
+            let score = Math.floor( Math.random() * 101 );
+            let grade = "";
+            let result = "";
+            let description = "";
+
+            if( score >= 80 ) { grade = "A"; }
+            else if( score >= 70 ) { grade = "B"; }
+            else if( score >= 60 ) { grade = "C"; }
+            else if( score >= 50 ) { grade = "D"; }
+            else { grade = "F"; }
+
+            if( score >= 50 ) { result = "ผ่าน"; }
+            else { result = "ไม่ผ่าน"; }
+
+            //เหมือน switch case ใน java
+            switch( grade ) {
+                case "A":
+                    description = "ยอดเยี่ยมมาก";
+                    break;
+                case "B":
+                    description = "ดีมาก รักษามารตฐานไว้";
+                    break;
+                case "C":
+                    description = "ผ่านเกณฑ์ระดับดี";
+                    break;
+                case "D":
+                    description = "พอใช้ แต่ควรพัฒนาเพิ่ม";
+                    break;
+                case "F":
+                    description = "ต้องลงทะเบียนเรียนใหม่";
+                    break;
+                default:
+                    description = "ไม่พบข้อมูล";
+            }
+
+            console.log( "คะแนน: " , score );
+            console.log( "เกรด: " , grade );
+            console.log( "ผลสอบ: " , result );
+            console.log( "คำอธิบาย: " , description );
+
+            document.getElementById( "output" ).innerHTML = `
+                <p>คะแนนที่สุ่มได้: ${score}</p>
+                <p>เกรด: ${grade}</p>
+                <p>ผลสอบ: ${result}</p>
+                <p>คำอธิบาย: ${description}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
