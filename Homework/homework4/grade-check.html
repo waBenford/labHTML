@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check-Grade</title>
+</head>
+<body>
+    <button onclick="checkGrade()">Run code</button>
+    <div id="output"></div>
+
+    <script>
+        function checkGrade() {
+            let score = 80;
+            let grade = "";
+            let result = "";
+
+            if( score >= 80 ) { grade = "A"; }
+            else if( score >= 70 ) { grade = "B"; }
+            else if( score >= 60 ) { grade = "C"; }
+            else if( score >= 50 ) { grade = "D"; }
+            else { grade = "F"; }
+
+            if( score >= 50 ) { result = "ผ่าน"; }
+            else { result = "ไม่ผ่าน"; }
+
+            console.log( "คะแนน: " , score );
+            console.log( "เกรด: " , grade );
+            console.log( "ผลสอบ: " , result );
+
+            document.getElementById( "output" ).innerHTML = `
+                <p>คะแนน: ${score}</p>
+                <p>เกรด: ${grade}</p>
+                <p>ผลสอบ: ${result}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
