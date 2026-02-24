@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="output">ผลลัพธ์จะแสดงที่นี่</div>
+    <button onclick="runDemo()">Run Code</button>
+
+    <script>
+        function runDemo() {
+            const output = [];
+
+            // 1) if statement
+            let age = 18;
+            if (age >= 18) {
+                output.push("คุณผู้ใหญ่แล้ว");
+                console.log("คุณผู้ใหญ่แล้ว");
+            } else {
+                output.push("คุณยังเป็นเด็ก");
+                console.log("คุณยังเป็นเด็ก");
+            }
+
+            // 2) for loop
+            for (let i = 0; i < 5; i++) {
+                output.push("รอบที่ " + i);
+                console.log("รอบที่ " , i);
+            }
+
+            // Display output
+            document.getElementById("output").textContent = output.join("\n");
+        }
+    </script>
+</body>
+</html>

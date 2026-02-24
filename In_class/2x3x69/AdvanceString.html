@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre id="output">ผลลัพธ์จะแสดงที่นี่</pre>
+    <button onclick="runStringDemo()">Run code</button>
+
+    <script>
+        function runStringDemo() {
+            const out = [];
+
+            let text = 'JavaScript เจ๋งมาก';
+            let firstName = 'ธนกร';
+
+            //template Literal
+            out.push(`สวัสดี ${firstName}!`);
+            console.log(`ความยาว: ` + text.length);
+            //String method
+            out.push("ความยาว: " + text.length);
+            console.log("ความยาว:", text.length);
+            out.push("ตัวใหญ่: " + text.toUpperCase());
+            console.log("ตัวใหญ่:", text.toUpperCase());
+            out.push("ตัวเล็ก: " + text.toLowerCase());
+            console.push("ตัวเล็ก:", text.toLowerCase());
+            out.push('มี "่java"?' + text.includes('java'));
+            console.log('มี "่java"?', text.includes('java'));
+            out.push('ตำแหน่ง "เจ๋ง": ' + text.indexOf('เจ๋ง'));
+            console.log('ตำแหน่ง "เจ๋ง":', text.indexOf('เจ๋ง'));
+            out.push('ตัดคำ: ' + text.slice(0, 10));
+            console.log('ตัดคำ:', text.slice(0, 10));
+            out.push('แทนที่: ' + text.replace('เจ๋ง', 'สุดยอด'));
+            console.log('แทนที่:', text.replace('เจ๋ง', 'สุดยอด'));
+
+            //แสดงผล
+            document.getElementById("output").textContent = out.join("\n");
+
+            //console log
+            console.clear();
+            out.forEach(line => console.log(line));
+        }
+    </script>
+</body>
+</html>

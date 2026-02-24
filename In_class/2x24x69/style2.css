@@ -1,0 +1,46 @@
+body {
+            font-family: "Prompt", sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 5px;
+        }
+
+        #header {
+            color: darkblue;
+        }
+
+        .item {
+            padding: 4px 0;
+        }
+
+        .highlight {
+            background: yellow;
+        }
+
+        button {
+            padding: 8px 16px;
+            margin: 4px 4px 10px 0;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            background: #00bfff;
+            color: white;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background: #0095d6;
+        }
+
+        #logBox {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            background: #fff;
+            border-left: 4px solid #00d26a;
+            font-family: Consolas, monospace;
+            white-space: pre-wrap;
+        }

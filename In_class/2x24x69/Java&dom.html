@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <h1 id="header">หัวข้อเดิมบนหน้าเว็บ</h1>
+    <p>รายการตัวอย่าง (class - "item"):</p>
+    <ul>
+        <li class="item">รายการที่ 1</li>
+        <li class="item">รายการที่ 2</li>
+        <li class="item">รายการที่ 3</li>
+    </ul>
+
+    <div style="margin-top: 20px; margin-bottom: 10px;">
+        <button onclick="changeTitle()">เปลี่ยนข้อความ + สีของหัวข้อ</button>
+        <button onclick="highlightItem()">ไฮไลด? .item ทั้งหมด</button>
+        <button onclick="addParagraph()">สร้าง & เพิ่มข้อความใหม่</button>
+    </div>
+
+    <div id="logBox">Log: รอกดปุ่มเพื่อดูการเปลี่ยนแปลง...</div>
+
+    <script>
+        const title = document.getElementById("header");
+        const items = document.querySelectorAll(".item");
+        const logBox = document.getElementById("logBox");
+
+        function log(message) {
+            console.log(message);
+            logBox.textContent += "\n" + message;
+        }
+
+        function changeTitle() {
+            title.textContent = "หัวข้อถูกเปลี่ยนโดย Javascript";
+            title.style.color = "red";
+            title.style.fontWeight = "bold";
+            log("เปลี่ยนข้อความและสีของ #header แล้ว");
+        }
+
+        function highlightItem() {
+            items.forEach((item, index) => {
+                item.classList.add("highlight");
+                item.textContent = "รายการที่ " + (index + 1) + " (ถูกไฮไลด์)";
+            });
+            log("เพิ่ทคลาส .highlight ให้ .item ทั้งหมด");
+        }
+
+        function addParagraph() {
+            let p = document.createElement("p");
+            p.textContent = "ข้อความใหม่ที่เพิ่มจาก JavaScript เวลา: " + new Date().toLocaleTimeString();
+            document.body.appendChild(p);
+            log("สร้าง <p> ใหม่และ appenChild ลงท้าย <body>");
+        }
+    </script>
+</body>
+</html>
